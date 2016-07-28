@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'version'
 
 Gem::Specification.new do |spec|
   spec.name          = "threejs-rails"
-  spec.version       = Version.current
+  spec.version       = File.read('VERSION').chomp
   spec.authors       = ["Marvin Danig", "Scott Parrish"]
   spec.email         = ["marvin@bubbl.in","anithri@gmail.com"]
   spec.summary       = %q{Three.js bundled for Rails}

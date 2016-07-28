@@ -23,6 +23,11 @@ mkdir -p $TOP_DIR
 cp "$RELEASE_PATH/build/three.js" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/build/three.min.js" $VENDOR_JS_PATH
 
+cp "$RELEASE_PATH/examples/js/controls/OrbitControls.js" $VENDOR_JS_PATH
+cp "$RELEASE_PATH/examples/js/loaders/ColladaLoader.js" $VENDOR_JS_PATH
+cp "$RELEASE_PATH/examples/js/loaders/VRMLLoader.js" $VENDOR_JS_PATH
+
+
 # for file in "$RELEASE_PATH/src/i18n/"*; do
 #   base_name=$(basename "$file")
 #   final_name="three.$(echo $base_name)"

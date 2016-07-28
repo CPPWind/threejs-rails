@@ -3,24 +3,25 @@
 set -e
 
 if [ $# -eq 0 ]; then
-  echo "No tag supplied. Usage: ./update.sh 0.0.1.alpha"
+  echo "No TAG supplied. Usage: ./update.sh 0.0.1.alpha"
   exit 1
 fi
 
-TAG=$1
-EXTRACT_DIRECTORY="$$$(date "+%Y%m%d%H%M%S")"
-FILE_NAME="$EXTRACT_DIRECTORY.tar.gz"
-RELEASE_URL="https://github.com/mrdoob/three.js/tree/master/build"
-RELEASE_PATH="$EXTRACT_DIRECTORY/.$TAG"
+TOP_DIR='tmp'
 
+TAG=$1
+FILE_NAME="$TOP_DIR/threejs-$TAG.tar.gz"
+RELEASE_URL="https://github.com/mrdoob/three.js/archive/$TAG.zip"
+RELEASE_PATH="$TOP_DIR/three.js-$TAG"
+echo "Fetching $RELEASE_URL"
 VENDOR_JS_PATH="vendor/assets/javascripts"
 
-wget -O $FILE_NAME $RELEASE_URL 
-mkdir $EXTRACT_DIRECTORY
-tar xfz $FILE_NAME -C $EXTRACT_DIRECTORY
+#wget -O $FILE_NAME $RELEASE_URL
+mkdir -p $TOP_DIR
+#unzip $FILE_NAME -d $TOP_DIR
 
-cp "$RELEASE_PATH/dist/three.js" $VENDOR_JS_PATH
-cp "$RELEASE_PATH/dist/three.min.js" $VENDOR_JS_PATH
+cp "$RELEASE_PATH/build/three.js" $VENDOR_JS_PATH
+cp "$RELEASE_PATH/build/three.min.js" $VENDOR_JS_PATH
 
 # for file in "$RELEASE_PATH/src/i18n/"*; do
 #   base_name=$(basename "$file")
@@ -28,5 +29,4 @@ cp "$RELEASE_PATH/dist/three.min.js" $VENDOR_JS_PATH
 #   cp $file "$VENDOR_JS_PATH/$final_name"
 # done
 
-
-rm -rf $FILE_NAME $EXTRACT_DIRECTORY
+#rm -rf $FILE_NAME $TOP_DIR

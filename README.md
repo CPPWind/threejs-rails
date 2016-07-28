@@ -9,7 +9,7 @@ Rubygem for `threejs-r73` for Rails 4+ via asset-pipeline.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
+gem 'threejs-rails', git: 'git://gitlab.cppwind.local/4winds/threejs-rails.git'
 ```
 
 And then execute:

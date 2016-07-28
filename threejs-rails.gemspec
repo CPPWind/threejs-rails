@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'threejs-rails/version'
+# require 'threejs-rails/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "threejs-rails"
-  spec.version       = Threejs::Rails::VERSION
-  spec.authors       = ["Marvin Danig"]
-  spec.email         = ["marvin@bubbl.in"]
+  spec.version       = '0.1.0'
+  spec.authors       = ["Marvin Danig", "Scott Parrish"]
+  spec.email         = ["marvin@bubbl.in","anithri@gmail.com"]
   spec.summary       = %q{Three.js bundled for Rails}
   spec.description   = %q{Three.js bundled for Rails}
   spec.homepage      = ""
@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "version", "~> 1.0"
 
   spec.add_dependency("railties", ">= 3.0.0")
 end

@@ -1,5 +1,7 @@
+require 'version'
+
 module Threejs
   module Rails
-    VERSION = "r79.1"
+    is_versioned
   end
 end

@@ -23,6 +23,7 @@ mkdir -p $TOP_DIR
 cp "$RELEASE_PATH/build/three.js" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/build/three.min.js" $VENDOR_JS_PATH
 
+cp "$RELEASE_PATH/examples/js/Detector.js" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/examples/js/controls/OrbitControls.js" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/examples/js/loaders/ColladaLoader.js" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/examples/js/loaders/VRMLLoader.js" $VENDOR_JS_PATH
